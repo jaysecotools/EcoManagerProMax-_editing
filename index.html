@@ -641,6 +641,11 @@
                                 <i class="bi bi-cloud-sun"></i> <span>Weather</span>
                             </a>
                         </li>
+<li class="nav-item">
+    <a class="nav-link" href="#" id="userGuideBtn" aria-label="User Guide">
+        <i class="bi bi-question-circle"></i> <span>User Guide</span>
+    </a>
+</li>
                     </ul>
                 </div>
             </div>
@@ -1687,9 +1692,26 @@
 
         // WeatherAPI.com configuration
         const weatherConfig = {
-            apiKey: 'MY WEATHER API KEY HERE', // Replace with your actual WeatherAPI.com key
+            apiKey: 'INSERT VALID API KEY HERE', // Replace with your actual WeatherAPI.com key
             baseUrl: 'https://api.weatherapi.com/v1/'
         };
+
+// User Guide button functionality
+document.getElementById('userGuideBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Open the User Guide in a new tab
+    const guideWindow = window.open('UserGuide.html', 'EcoManagerProGuide', 
+        'width=1200,height=800,scrollbars=yes,resizable=yes');
+    
+    // Focus on the new window
+    if (guideWindow) {
+        guideWindow.focus();
+    } else {
+        // If popup was blocked, open in a regular tab
+        window.open('UserGuide.html', '_blank');
+    }
+});
 
         // Simple database using localStorage with enhanced structure
         const db = {
